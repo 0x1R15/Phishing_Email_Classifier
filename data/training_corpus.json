@@ -1,0 +1,62 @@
+[
+  {
+    "label": "legitimate",
+    "subject": "Weekly Team Sync Meeting",
+    "body": "Hi team, this is a reminder for our weekly team sync tomorrow at 10 AM. We will discuss the current sprint progress, upcoming tasks, and resolve any blockers. Please update your tickets before the meeting. See you then!",
+    "features": ["__feat_spf_pass__", "__feat_dkim_pass__", "__feat_dmarc_pass__"]
+  },
+  {
+    "label": "legitimate",
+    "subject": "[GitHub] Security Alert: Package update available",
+    "body": "A security vulnerability has been identified in one of your repository dependencies. Please update the npm packages to their latest versions to mitigate this risk. You can view the details and pull request on GitHub.",
+    "features": ["__feat_spf_pass__", "__feat_dkim_pass__", "__feat_dmarc_pass__"]
+  },
+  {
+    "label": "legitimate",
+    "subject": "Your monthly billing invoice from cloud services",
+    "body": "Dear customer, your invoice for this month is ready. The total amount of $45.12 has been charged to your card on file. You can download the PDF invoice directly from your billing portal by logging in securely at cloudservices.com.",
+    "features": ["__feat_spf_pass__", "__feat_dkim_pass__", "__feat_dmarc_pass__"]
+  },
+  {
+    "label": "legitimate",
+    "subject": "Password reset confirmation",
+    "body": "Hello, this is a confirmation that your password was successfully changed. If you did not make this change, please contact security support immediately. Thank you.",
+    "features": ["__feat_spf_pass__", "__feat_dkim_pass__"]
+  },
+  {
+    "label": "suspicious",
+    "subject": "Urgent update on your account status",
+    "body": "Dear user, we noticed some changes in your account. We need you to check the status of your profile information. Please do not ignore this notification. Let us know if you have any questions.",
+    "features": ["__feat_free_sender__", "__feat_spf_none__"]
+  },
+  {
+    "label": "suspicious",
+    "subject": "Pending shipping information required",
+    "body": "We have a package waiting for you at the warehouse, but some address information is missing. Please confirm your details. Click the link to update your shipping address details.",
+    "features": ["__feat_suspicious_url__", "__feat_spf_pass__"]
+  },
+  {
+    "label": "phishing",
+    "subject": "URGENT: PayPal Account Suspended - Action Required!",
+    "body": "Dear PayPal customer, we detected unusual activity on your card. For security reasons, your account has been temporarily restricted. To restore access, you must verify your identity immediately. Failure to verify within 24 hours will lead to permanent suspension. Click here to unlock: http://paypal-security-login.xyz/auth",
+    "features": ["__feat_spf_fail__", "__feat_dmarc_fail__", "__feat_suspicious_url__", "__feat_lookalike_domain__"]
+  },
+  {
+    "label": "phishing",
+    "subject": "Action Required: Update your bank account details",
+    "body": "Your bank account has been flagged for a potential security breach. Please sign in to our secure portal to verify your routing and account numbers. Immediate action is required to avoid financial loss.",
+    "features": ["__feat_spf_fail__", "__feat_mismatched_sender__", "__feat_suspicious_url__"]
+  },
+  {
+    "label": "phishing",
+    "subject": "Microsoft Office 365: Password Expiration Notice",
+    "body": "Your password for office365 will expire in 2 hours. To keep using your corporate email account, click the button below to update your credentials and keep current password active. http://login-microsoft-office365.com/login",
+    "features": ["__feat_spf_fail__", "__feat_dmarc_fail__", "__feat_suspicious_url__", "__feat_lookalike_domain__"]
+  },
+  {
+    "label": "phishing",
+    "subject": "Attached Invoice overdue - immediate wire payment required",
+    "body": "Please find attached the invoice for last month's project deliverables. The payment is now overdue by 5 days. Please execute a wire transfer to the account listed in the attached invoice.pdf.exe. Urgent payment required today.",
+    "features": ["__feat_spf_none__", "__feat_dangerous_attachment__", "__feat_double_ext_attachment__"]
+  }
+]
