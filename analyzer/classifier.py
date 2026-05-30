@@ -108,9 +108,15 @@ class NaiveBayesClassifier:
         if sum_exp > 0:
             probs = {label: val / sum_exp for label, val in exp_scores.items()}
         else:
-            probs = {"legitimate": 0.33, "suspicious": 0.33, "phishing": 0.34}
+            probs = {"legitimate": 0.3333, "suspicious": 0.3333, "phishing": 0.3334}
             
-        return probs
+        # Apply label smoothing (alpha = 0.1) to avoid overconfident predictions (caps max confidence at ~93.3%)
+        alpha = 0.1
+        smoothed_probs = {}
+        for label, val in probs.items():
+            smoothed_probs[label] = round(val * (1 - alpha) + (alpha / 3.0), 4)
+            
+        return smoothed_probs
 
 
 class HybridClassifier:
